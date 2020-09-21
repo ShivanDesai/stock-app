@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import logo from './logo.svg';
 import Card from './Card';
 import './App.css';
+import logger from './logger';
 
 class App extends Component {
 
@@ -22,6 +23,7 @@ class App extends Component {
 
   handleKeyDown = (e) => {
     if (e.key === 'Enter') {
+      logger.log('info', 'Synbol searched for: ' + this.state.company);
       this.search();
     }
   }
